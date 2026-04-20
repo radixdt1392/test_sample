@@ -1,0 +1,59 @@
+<%- include('partials/head') %>
+
+<body class="bg-light d-flex align-items-center justify-content-center vh-100">
+
+<div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+    
+    <h3 class="text-center mb-4">Register</h3>
+
+    <% if(typeof error !=='undefined' && error ) { %>
+        <div class="alert alert-danger">
+            <% error.split(', ').forEach(err => { %>
+                    <%= err %>
+            <% }); %>
+        </div>
+    <% } %>
+
+    <% if (success) { %>
+        <div class="alert alert-success"><%= success %></div>
+    <% } %>
+
+    <form action="/api/auth/register" method="POST">
+        
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" placeholder="Enter name" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" placeholder="Enter email" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Enter password" required>
+        </div>
+
+        <div class="form-group">
+            <label>Admin Roles</label>
+            <select name="role" class="form-control">
+                <% const roles =['user', 'manager','admin' ]; %>
+                    <% roles.forEach(pr=> { %>
+                        <option value="<%= pr %>"><%= pr %>
+                        </option>
+                <% }); %>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Register</button>
+    </form>
+
+    <div class="text-center mt-3">
+        <a href="/api/auth/login" class="text-decoration-none blink">Already have an account? Login</a>
+    </div>
+
+</div>
+
+</body>
+</html>

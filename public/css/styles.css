@@ -1,0 +1,238 @@
+/* Global */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 12px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.menu button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #4f46e5;
+    color: #fff;
+}
+
+.menu .logout, .login {
+    background: #e74c3c;
+}
+
+/* Layout */
+.container {
+    padding: 20px;
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Buttons */
+.add-btn {
+    padding: 8px 14px;
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.edit {
+    background: #3498db;
+    color: #fff;
+}
+
+.delete {
+    background: #e74c3c;
+    color: #fff;
+}
+
+/* Table */
+.table-container {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background: #f0f2f5;
+    font-weight: 600;
+}
+
+tr {
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background: #fafafa;
+}
+td:last-child {
+    white-space: nowrap;
+}
+
+/* Product */
+.product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product img {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* Tags & Status */
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.active { background: #e6f7ee; color: #27ae60; }
+.pending { background: #fff4e5; color: #e67e22; }
+.inactive { background: #fdecea; color: #e74c3c; }
+
+.tag {
+    font-size: 12px;
+    background: #eef2ff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.price {
+    font-weight: bold;
+}
+
+/* ===== FORM PAGE (Add/Edit Product) ===== */
+.form-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.row .form-group {
+    flex: 1;
+}
+
+.actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.save {
+    background: #27ae60;
+    color: #fff;
+}
+
+.cancel {
+    background: #ccc;
+}
