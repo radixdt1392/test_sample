@@ -10,7 +10,7 @@ module.exports = {
 
     async set(key, data, ttlseconds = 120) {
 
-        await radis.set(key, JSON.stringify(data), 'EX', ttlseconds);
+        await redis.set(key, JSON.stringify(data), 'EX', ttlseconds);
     },
 
     async invalidate(key) {

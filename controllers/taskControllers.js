@@ -135,7 +135,7 @@ async function deleteTaskDetail(req, resp) {
     try {
         const ID = req.params.id;
         await Tasks.destroy({ where: { id: ID } });
-        await cache.invalidate(`task_${ID}`);
+        await cache.invalidate(`tasks_${ID}`);
         await cache.invalidateByPrefix(`tasks_`);
         resp.redirect('/api/');
 
@@ -144,8 +144,33 @@ async function deleteTaskDetail(req, resp) {
     }
 }
 
+async function uploadAttachment(req,resp) {
+    try {
+        const ID = req.params.id;
+        const task = await Tasks.findByPk(ID);
+        if(!task) return resp.status(404).json({success: false, message:'task not found'});
+        if(!req.file) return resp.status(400).json({
+            success:'false',
+            message:'no file uplaoded'
+        });
+        await Tasks.update(
+            { attachments : 'uploads/' + req.file.filename},
+            { where :  {id : ID} }
+        ); 
+
+        await cache.invalidate(`tasks_${ID}`);
+        await cache.invalidateByPrefix('tasks_');
+        resp.redirect('/api/tasks/'+ ID);
+    } catch (error) {
+        resp.status(500).json({
+            success:false,
+            message:error.message
+        });
+    }
+}
+
 module.exports = {
-    getAllTask, addeditTask, getTaskDetails, saveTask, updateTask, deleteTaskDetail
+    getAllTask, addeditTask, getTaskDetails, saveTask, updateTask, deleteTaskDetail, uploadAttachment
 };
 
 
