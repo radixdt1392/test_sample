@@ -8,7 +8,7 @@ const ALLOWED_TYPE = {
     'image/gif': '.gif',
     'application/pdf': '.pdf'
 };
-const MAX_SIZE = 2 * 1024 * 1024; // 5MB
+const MAX_SIZE = 2 * 1024 * 1024; // 2MB
 
 //storage - where file should save.
 

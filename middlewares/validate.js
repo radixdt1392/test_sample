@@ -11,9 +11,8 @@ const registerRules = [
 ];
 
 const loginRules = [
-    body('email').trim().notEmpty().withMessage('email ios requird').isEmail().withMessage('invalid Email').normalizeEmail(),
+    body('email').trim().notEmpty().withMessage('email is requird').isEmail().withMessage('invalid Email').normalizeEmail(),
     body('password').notEmpty().withMessage('Password is required')
-
 ];
 
 // Rule: validate :id in URL

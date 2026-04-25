@@ -2,7 +2,7 @@
     <div class="logo">TSM</div>
     <div class="menu">
         <% if(typeof user !== 'undefined' && user) { %>
-            <span>Welcome, <% user.name || user.email %></span>
+                <span>Welcome, <%= user.name || user.email %></span>
             <a href="/api/auth/logout/"  class="add-btn logout">Logout</a>
         <% } else { %>
             <a href="/api/auth/login/"  class="add-btn login">Login</a>

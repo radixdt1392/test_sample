@@ -39,7 +39,9 @@ app.use((req,resp,next) => {
     }
     next();
 });
-
+app.get('/', (req,resp) => {
+    resp.redirect('/api/');
+});
 app.use('/api',authRouters);
 app.use('/api',taskRouters);
 
@@ -59,7 +61,6 @@ db.sequelize.authenticate().then(() => {
 }
 ).catch(err => {
     console.log("There is DB connection issue", err);
-
 })
 
 

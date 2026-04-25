@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "redis": "docker start redis",
-    "dev": "nodemon app.js",
+    "dev": " docker start redis && nodemon app.js",
     "setup":"npm install && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all && mkdir -p public/uploads && echo 'Setup Complete! Run: npm run dev'",
     "db:create": "npx sequelize-cli db:create",
     "db:migrate": "npx sequelize-cli db:migrate",

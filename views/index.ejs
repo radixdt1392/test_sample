@@ -46,7 +46,7 @@
                         <a href="/api/tasks/<%= task.id %>" class="action-btn edit">Edit</a>
                         <% } %>
 
-                        <% if(user && (user === 'admin' || user.role === 'manager')) { %>
+                        <% if(user && (user.role === 'admin' || user.role === 'manager')) { %>
                         <form action="/api/tasks/delete/<%=task.id %>" method="POST" style="display:inline;">
                             <button type="submit" class="action-btn delete" onclick="return confirm('Are you sure?')">Delete</button>
                         </form>
